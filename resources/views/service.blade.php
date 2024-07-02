@@ -25,7 +25,7 @@
                                 <h5 class="card-title">Our Doctor</h5>
                                 <p class="card-text">A doctor may visit a patient at home to diagnose and treat the illness. He or she may also periodically review the home health care needs.
                             </p>
-                                <a class="cardbtn btn btn-primary" href="/doctors">Click to visit</a>
+                                <a class="cardbtn btn btn-primary" href="/doctor">Click to visit</a>
                             </div>
                         </div>
                     </div>

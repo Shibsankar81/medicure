@@ -25,7 +25,6 @@ class UserController extends Controller
     //     return redirect('/login')-> with('success', 'registration successfully completed');
 
     // }
-
     public function register(){
         return view('register');
     }
@@ -42,7 +41,8 @@ class UserController extends Controller
             'email'=>$request->email,
             'phone'=>$request->phone,
             'village'=>$request->village,
-            'password'=>Hash::make($request->password)
+            'password'=>Hash::make($request->password),
+            'role'=>'patient',
 
         ]);
         $credentials = $request->only('email', 'password');
@@ -64,9 +64,34 @@ class UserController extends Controller
             'password' => ['required'],
         ]);
         if(Auth::attempt($credentials)){
-            return redirect('/')->with('success', 'login successful');
+            $user = Auth::user();
+            if ($user->role == 'admin') {
+                return redirect('dashboard');
+            }
+             elseif ($user->role == 'doctor') {
+                return redirect()->route('doctorDashboard');
+            } 
+            else {
+                return redirect('/');
+            }
         }
         return redirect('login')->with('error', 'not successful')->onlyInput('email');
 
+    }
+    // public function records(){
+    //     $records = User::all();
+    // //   return $records = DB::table('doctors')->get();
+    
+    //     return view('admin', ['records'=> $records]);
+    // }
+
+    public function logout(Request $request){
+        // $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('login');
     }
 }

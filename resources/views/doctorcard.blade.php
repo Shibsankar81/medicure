@@ -119,7 +119,7 @@
 
 <div class="col-md-4 col-10 mx-auto">
     <div class="card">
-        <img src="images/doctor.jpg" class="card-img-top card-img" alt="props.imgsrc" />
+        <img src="images/d-w-b.png" class="card-img-top card-img" style="height: 15rem;" />
         <h2 class="doctor-card-title">y k narayan</h2>
 
         <div class="mt-2 px-2 doctor-card">

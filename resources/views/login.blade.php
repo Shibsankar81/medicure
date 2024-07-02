@@ -38,7 +38,8 @@
                        </div>
 
                        <button type="submit" class="btn btn-primary contact_btn">log in</button><br>
-                       <a href="/register"><button type="button" class="btn btn-secondary btn-sm alert alert-success">register</button></a>
+                       {{-- <a ><button type="button" class="btn btn-secondary btn-sm alert alert-success">register</button></a> --}}
+                       <p style="text-align: center; margin-top:20px">If You have not Registered yet ! <a href="/register">Register</a> here.</p>
                    </form>
 
                  </div>

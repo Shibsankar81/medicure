@@ -56,11 +56,8 @@ aliquam voluptatem veniam, est atque cumque eum delectus sint!
 <a href="/about" class="footer_a">About us</a>
 </li>
 <li class="mb-2">
-<a href="/contact" className="footer_a">contact us</a>            
+<a href="/contact" class="footer_a">contact us</a>            
 </li>
-{{-- <li className="mb-2">
-<a hrefef="#!" className="footer_a">Link 4</a>
-</li> --}}
 </ul>
 </div>
  <!--Grid column--> 

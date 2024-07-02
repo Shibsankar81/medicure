@@ -10,9 +10,9 @@
             <div class='col-12 mx-auto'>
             <div class="row home_row">
                 <div class="col-md-6 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center align-items-center flex-column pt-2">
-                    <h1>Connect You With our <strong class="brand-name">medi + <span class="cure">CUre</span></strong></h1>
-                    <h2 class="my-3 px-2">
-                        We are a medical shop & clinic and have Full medical service for You
+                    <h1>Welcome to our <strong class="brand-name">medi + <span class="cure">CUre</span></strong></h1>
+                    <h2 class="my-3 px-4">
+                        Our comprehensive medical shop and clinic offering full medical services. We provide exceptional care and a wide range of medical supplies to meet all your healthcare needs in one convenient location.
                     </h2>
                     <div class="mt-3">
                         <a href='#service_section' class="btn-get-started">get Started</a>
@@ -29,8 +29,8 @@
     </section>
 
 
-    <div class="service-heading">
-        <h1>Our medical Service</h1>
+    <div class="service-heading" style="background-color: #fff !important;">
+        <h1 style="background-color: #fff">Our medical Service</h1>
     </div>
     <section id='service_section'>
         @include('service')
@@ -42,13 +42,16 @@
     <section>
         @include('carousel')
     </section> --}}
-    <div class="doctor-slide">
+    {{-- <div class="doctor-slide">
         <h1>Book Your Appointment</h1>
     </div>
     <section>
         @include('booking')
-    </section>
-
+    </section> --}}
+    <div class="doctor-slide" style="background-color: #fff !important;">
+        <h1 style="background-color: #fff">Our Patient review</h1>
+    </div>
+    @include('review');
         @include('footer')
 
    

@@ -1,6 +1,10 @@
-{{-- @extends('layout') --}}
+{{-- @extends('layout')
 
-{{-- @section('content') --}}
+@section('content') --}}
+
+<style>
+
+</style>
 
   <div class='container-fluid nav_bg'>
     <div class='row'>
@@ -16,14 +20,14 @@
     <li class="nav-item">
       <a class="nav-link" activeclassName='active_menu' aria-current="page" href="/">Home</a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a class="nav-link" activeclassName='active_menu' href="#service_section">Service</a>
+    </li> --}}
+    <li class="nav-item">
+      <a class="nav-link" activeclassName='active_menu' href="/booking">Appointment</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" activeclassName='active_menu' href="#booking">Appointment</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" activeclassName='active_menu' href="/about">About</a>
+      <a class="nav-link" activeclassName='active_menu' href="/about">About Us</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" activeclassName='active_menu' href="/contact">Contact Us</a>
@@ -31,8 +35,35 @@
     </ul>
   
     <form class="form-inline">
-      <a href="/login"><button type="button" class="btn btn-primary btn-sm">login</button></a>
-    </form>
+      @guest
+          <!-- User is not authenticated -->
+          <a href="{{ route('login') }}"><button type="button" class="btn btn-primary btn-sm">Login</button></a>
+      @else
+          <!-- User is authenticated -->
+          <div class="dropdown">
+            <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="uil uil-user"></i> {{ Auth::user()->name }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown" style="width:300px; padding: 10px; margin-left:-9rem; margin-top:1rem;">
+              <li>user-type : {{Auth::user()->role}}</li>
+                <li>email : {{Auth::user()->email}}</li>
+                <li>Phone: {{Auth::user()->phone}}</li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                       <i class="uil uil-signout"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    @endguest
+  </form>
+
+  <!-- Logout form -->
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  @csrf
+</form>
+
 </div>
 </div>
 </nav>

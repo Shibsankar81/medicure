@@ -67,6 +67,7 @@
                           @enderror
                          </span>
                        </div>
+                       <p style="text-align: center; margin-top:20px">if already registered! then <a href="/login">login</a></p>
 
                        <button type="submit" class="btn btn-primary contact_btn">submit</button>
                    </form>

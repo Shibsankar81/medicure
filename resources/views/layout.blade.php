@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="/bootstrap-5.3.2-dist/css/bootstrap.css" rel="stylesheet">
+    {{-- <link href="/bootstrap-5.3.2-dist/css/bootstrap.css" rel="stylesheet"> --}}
     @include('cdn')
     <link rel="stylesheet" href="{{'/css/style.css'}}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>@yield('title','Laravel Medicure')</title>
 </head>
 <body>
@@ -58,7 +59,10 @@
 
         @yield('content')
 
-    <script src="/bootstrap-5.3.2-dist/js/bootstrap.js"></script> 
+        
+    {{-- <script src="/bootstrap-5.3.2-dist/js/bootstrap.js"></script>  --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     {{-- <script>
       var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
